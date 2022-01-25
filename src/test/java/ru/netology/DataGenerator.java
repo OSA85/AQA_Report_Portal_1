@@ -4,6 +4,8 @@ import com.github.javafaker.Faker;
 
 import lombok.experimental.UtilityClass;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 @UtilityClass
@@ -18,6 +20,12 @@ public class DataGenerator {
                     faker.name().lastName() + " " + faker.name().firstName(),
                     faker.numerify("+79#########"));
         }
+    }
+
+    public String date (int quantityOfDays) {
+        return LocalDate.now().plusDays(quantityOfDays).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
     }
+
+
 }
