@@ -1,17 +1,13 @@
 package ru.netology;
 
-import com.codeborne.selenide.Condition;
+
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.conditions.ExactText;
-import com.github.javafaker.Faker;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
 import java.time.Duration;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byName;
@@ -21,11 +17,10 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class CardDeliveryTest {
 
-    private Faker faker;
+
 
     @BeforeEach
     void setUpAll() {
-        faker = new Faker(new Locale("ru"));
         Configuration.holdBrowserOpen = true;
         open("http://localhost:9999");
     }
